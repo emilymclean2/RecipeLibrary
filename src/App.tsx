@@ -8,8 +8,7 @@ import AppNavigator from './AppNavigator';
 const App: React.FC = () => {
   return (
   <NavigationContainer>
-          <AppNavigator />
-
+    <AppNavigator />
   </NavigationContainer>
     
   );

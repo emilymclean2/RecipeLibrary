@@ -13,6 +13,8 @@ import {
 } from '@react-navigation/native';
 
 import HomeScreen from './screens/HomeScreen';
+import SearchScreen from './screens/SearchScreen';
+import LibraryScreen from './screens/LibraryScreen';
 
 import {mainColor} from './colors';
 import AppMenu from './components/AppMenu';
@@ -22,14 +24,8 @@ export type StackNavigatorParams = {
   Home: {
     refresh?: boolean;
   };
-  CategoryCount: {
-    category: string;
-  };
-  Location: {location: string};
-  AddEditArticle: {addOrEdit: string; article: string; quantity: number};
-  Investigate: undefined;
-  Debug: undefined;
-  Upcoming: undefined;
+  Search: undefined;
+  Library: undefined;
 };
 
 export type DrawerStackNavigatorParams = {
@@ -59,6 +55,22 @@ const MainNavigator: React.FC = () => {
         component={HomeScreen}
         options={{
           title: 'Recipe Library',
+          headerLeft: () => <MenuIcon />,
+        }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          title: 'Search',
+          headerLeft: () => <MenuIcon />,
+        }}
+      />
+      <Stack.Screen
+        name="Library"
+        component={LibraryScreen}
+        options={{
+          title: 'Library',
           headerLeft: () => <MenuIcon />,
         }}
       />
